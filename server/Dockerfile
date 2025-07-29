@@ -8,11 +8,11 @@ RUN \
 
 WORKDIR /service
 
-COPY package.json .
+COPY server/package.json .
 RUN npm install
-COPY server.js .
-COPY config.js .
-COPY lib lib
-COPY certs certs
+COPY server/server.js .
+COPY server/config.js .
+COPY server/lib lib
+COPY server/certs certs
 
 CMD ["node", "/service/server.js"]
